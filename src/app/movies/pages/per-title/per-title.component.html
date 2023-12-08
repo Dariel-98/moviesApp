@@ -1,1 +1,39 @@
-<p>per-title works!</p>
+<div class="container pt-3">
+  <div class="d-flex align-items-center justify-content-between">
+    <h4>Per Title</h4>
+
+    <form class="d-flex" (ngSubmit)="search()" role="search">
+      <input
+        class="form-control me-2 rounded-5"
+        type="search"
+        placeholder="Search..."
+        aria-label="Search"
+        name="termino"
+        [(ngModel)]="term"
+      />
+    </form>
+  </div>
+  <hr />
+
+  <!-- Error Message -->
+  <div *ngIf="isError" class="alert alert-danger w-50">
+    Nothing found with the title: "{{ term }}".
+  </div>
+
+  <!-- Movie Cards -->
+  <div *ngIf="!isError" class="card mb-3 shadow" style="width: 15rem">
+    <img
+      src="http://picsum.photos/200"
+      class="card-img-top"
+      alt="random image"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Movie Title</h5>
+      <p class="text-muted">Year</p>
+      <p class="card-text">This piece of text is intended to be the plot</p>
+      <p class="card-text">
+        <small class="text-body-secondary">ID</small>
+      </p>
+    </div>
+  </div>
+</div>
