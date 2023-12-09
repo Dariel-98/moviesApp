@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PerTitleComponent } from './pages/per-title/per-title.component';
 import { PerTypeComponent } from './pages/per-type/per-type.component';
 import { PerIdComponent } from './pages/per-id/per-id.component';
+import { SeeMovieComponent } from './pages/see-movie/see-movie.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'id',
         component: PerIdComponent,
+      },
+      {
+        path: 'id/:ID',
+        component: SeeMovieComponent,
       },
       {
         path: '**',

@@ -9,9 +9,19 @@ import { FormsModule } from '@angular/forms';
 import { InputComponent } from './components/input/input.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { RouterModule } from '@angular/router';
+import { SeeMovieComponent } from './pages/see-movie/see-movie.component';
 
 @NgModule({
-  declarations: [PerTitleComponent, PerTypeComponent, PerIdComponent, InputComponent, CardsComponent, MovieComponent],
-  imports: [CommonModule, MoviesRoutingModule, FormsModule],
+  declarations: [
+    PerTitleComponent,
+    PerTypeComponent,
+    PerIdComponent,
+    InputComponent,
+    CardsComponent,
+    MovieComponent,
+    SeeMovieComponent,
+  ],
+  imports: [CommonModule, MoviesRoutingModule, FormsModule, RouterModule],
 })
 export class MoviesModule {}

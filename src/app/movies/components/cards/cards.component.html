@@ -15,7 +15,9 @@
           <small class="text-body-secondary">{{ movie.imdbID }}</small>
         </p>
       </div>
-      <a routerLink="/id " class="btn btn-secondary">More info</a>
+      <a [routerLink]="['/id', movie.imdbID]" class="btn btn-secondary"
+        >More info</a
+      >
     </div>
   </div>
 </div>

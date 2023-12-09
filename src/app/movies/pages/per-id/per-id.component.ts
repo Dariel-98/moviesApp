@@ -14,8 +14,6 @@ export class PerIdComponent {
   movie: MovieID = {};
   isEmpty: boolean = true;
 
-  // Emitting variable to check if the search is empty or not
-
   constructor(private movieService: MovieService) {}
 
   // Method to search movies by ID
