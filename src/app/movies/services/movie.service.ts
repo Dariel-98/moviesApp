@@ -15,8 +15,12 @@ export class MovieService {
   constructor(private http: HttpClient) {}
 
   // Making the Http reques
-  findTitle(term: string, pageNumber?: number): Observable<Result> {
-    const url = `${this.apiUrl}/?apikey=${environment.apiKey}&s=${term}&page=${pageNumber}`;
+  findTitle(
+    term: string,
+    pageNumber?: number,
+    type?: string
+  ): Observable<Result> {
+    const url = `${this.apiUrl}/?apikey=${environment.apiKey}&s=${term}&page=${pageNumber}&type=${type}`;
     return this.http.get<Result>(url);
   }
 
