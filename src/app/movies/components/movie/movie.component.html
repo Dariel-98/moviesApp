@@ -1,6 +1,16 @@
 <div class="row">
   <div class="col col-sm-4 mt-4">
-    <img src="{{ movie.Poster }}" alt="" style="width: 100%" />
+    <img
+      class="rounded shadow"
+      src="{{ movie.Poster }}"
+      alt="Poster of the movie"
+      loading="lazy"
+      [ngStyle]="{
+        'min-height': '100px',
+        visibility: imageLoaded ? 'visible' : 'hidden'
+      }"
+      (load)="onImageLoad()"
+    />
   </div>
   <div *ngIf="!isEmpty" class="col-3 mt-4">
     <h5>

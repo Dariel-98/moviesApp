@@ -24,7 +24,6 @@ export class PerIdComponent {
 
     this.movieService.findId(this.term).subscribe((resp) => {
       if (resp.Response === 'True') {
-        console.log(resp);
         this.movie = resp;
         this.isEmpty = false;
       } else if (resp.Response === 'False') {
