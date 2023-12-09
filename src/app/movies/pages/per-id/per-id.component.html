@@ -13,36 +13,6 @@
 
   <!-- Info Panel -->
   <div *ngIf="!isError">
-    <div class="row">
-      <div class="col-3 mt-4">
-        <img src="{{ movie.Poster }}" alt="" style="width: 100%" />
-      </div>
-      <div class="col-3 mt-4">
-        <h5>
-          Titulo: <span class="fw-normal">{{ movie.Title }}</span>
-        </h5>
-        <br />
-        <h5>
-          Year: <span class="fw-normal">{{ movie.Year }}</span>
-        </h5>
-        <br />
-        <h5>
-          Type: <span class="fw-normal">{{ movie.Type | titlecase }}</span>
-        </h5>
-        <br />
-        <h5>
-          Genre: <span class="fw-normal">{{ movie.Genre | titlecase }}</span>
-        </h5>
-        <br />
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-10">
-        <h5>
-          Plot:
-          <span class="fw-normal lh-base fst-italic">{{ movie.Plot }}</span>
-        </h5>
-      </div>
-    </div>
+    <app-movie [movie]="movie" [isEmpty]="isEmpty"></app-movie>
   </div>
 </div>

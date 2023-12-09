@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Search } from '../../interfaces/movie.interface';
+import { Component, EventEmitter, Input } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { MovieID } from '../../interfaces/byID.interface';
 
@@ -13,6 +12,9 @@ export class PerIdComponent {
   term: string = '';
   isError: boolean = false;
   movie: MovieID = {};
+  isEmpty: boolean = true;
+
+  // Emitting variable to check if the search is empty or not
 
   constructor(private movieService: MovieService) {}
 
@@ -20,11 +22,13 @@ export class PerIdComponent {
   search(term: string) {
     this.term = term;
     this.isError = false;
+    this.isEmpty = true;
 
     this.movieService.findId(this.term).subscribe((resp) => {
       if (resp.Response === 'True') {
         console.log(resp);
         this.movie = resp;
+        this.isEmpty = false;
       } else if (resp.Response === 'False') {
         this.isError = true;
       }

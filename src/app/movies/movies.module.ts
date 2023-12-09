@@ -8,9 +8,10 @@ import { PerIdComponent } from './pages/per-id/per-id.component';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './components/input/input.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
-  declarations: [PerTitleComponent, PerTypeComponent, PerIdComponent, InputComponent, CardsComponent],
+  declarations: [PerTitleComponent, PerTypeComponent, PerIdComponent, InputComponent, CardsComponent, MovieComponent],
   imports: [CommonModule, MoviesRoutingModule, FormsModule],
 })
 export class MoviesModule {}
