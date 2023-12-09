@@ -7,9 +7,10 @@ import { PerTypeComponent } from './pages/per-type/per-type.component';
 import { PerIdComponent } from './pages/per-id/per-id.component';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './components/input/input.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
-  declarations: [PerTitleComponent, PerTypeComponent, PerIdComponent, InputComponent],
+  declarations: [PerTitleComponent, PerTypeComponent, PerIdComponent, InputComponent, CardsComponent],
   imports: [CommonModule, MoviesRoutingModule, FormsModule],
 })
 export class MoviesModule {}

@@ -12,24 +12,7 @@
   </div>
 
   <!-- Movie Cards -->
-  <div *ngIf="!isError" class="row justify-content-center">
-    <div class="col-6 col-md-4 col-lg-3 mb-3" *ngFor="let movie of movies">
-      <div class="card mb-3 shadow" style="height: 100%">
-        <img
-          src="{{ movie.Poster }}"
-          class="card-img-top img-fluid"
-          alt="Random Image"
-          style="height: 100%; object-fit: cover"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{ movie.Title | titlecase }}</h5>
-          <p class="text-muted">{{ movie.Year }}</p>
-          <p class="card-text">{{ movie.Type | titlecase }}</p>
-          <p class="card-text">
-            <small class="text-body-secondary">{{ movie.imdbID }}</small>
-          </p>
-        </div>
-      </div>
-    </div>
+  <div *ngIf="!isError">
+    <app-cards [movies]="movies"></app-cards>
   </div>
 </div>
