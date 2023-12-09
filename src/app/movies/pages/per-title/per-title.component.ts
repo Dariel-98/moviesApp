@@ -16,8 +16,8 @@ export class PerTitleComponent {
   constructor(private movieService: MovieService) {}
 
   // Method to search movies
-  search() {
-    console.log(this.term);
+  search(term: string) {
+    this.term = term;
     this.isError = false;
 
     this.movieService.findTitle(this.term).subscribe((resp) => {
