@@ -12,6 +12,8 @@ export class PerTitleComponent {
   term: string = '';
   isError: boolean = false;
   movies: Search[] = [];
+  pageNumber: number = 1; // Page number (from 1 to 100)
+  totalResults: number = 0; // Results per search
 
   constructor(private movieService: MovieService) {}
 
@@ -21,10 +23,9 @@ export class PerTitleComponent {
     this.isError = false;
 
     this.movieService.findTitle(this.term).subscribe((resp) => {
-      console.log(resp);
       if (resp.Response === 'True') {
-        console.log(resp.Search);
         this.movies = resp.Search;
+        this.totalResults = Number(resp.totalResults);
       } else {
         this.isError = true;
       }
@@ -33,5 +34,34 @@ export class PerTitleComponent {
   // Method to retrieve message error
   suggestions(term: string) {
     this.isError = false;
+  }
+
+  // Pagination methods
+  nextPage() {
+    if (
+      this.pageNumber >= this.totalResults - 10 ||
+      this.pageNumber * 10 > this.totalResults
+    ) {
+      return;
+    } else {
+      this.pageNumber++;
+      this.movieService
+        .findTitle(this.term, this.pageNumber)
+        .subscribe((resp) => {
+          this.movies = resp.Search;
+        });
+    }
+  }
+  previousPage() {
+    if (this.pageNumber == 1) {
+      return;
+    } else {
+      this.pageNumber--;
+      this.movieService
+        .findTitle(this.term, this.pageNumber)
+        .subscribe((resp) => {
+          this.movies = resp.Search;
+        });
+    }
   }
 }

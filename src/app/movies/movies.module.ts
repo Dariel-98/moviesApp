@@ -11,6 +11,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { RouterModule } from '@angular/router';
 import { SeeMovieComponent } from './pages/see-movie/see-movie.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,12 @@ import { SeeMovieComponent } from './pages/see-movie/see-movie.component';
     MovieComponent,
     SeeMovieComponent,
   ],
-  imports: [CommonModule, MoviesRoutingModule, FormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    MoviesRoutingModule,
+    FormsModule,
+    RouterModule,
+    NgxPaginationModule,
+  ],
 })
 export class MoviesModule {}

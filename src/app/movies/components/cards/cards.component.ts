@@ -8,5 +8,7 @@ import { Search } from '../../interfaces/movie.interface';
 })
 export class CardsComponent {
   // Declaring variables
+  p: number = 1;
+
   @Input() movies: Search[] = [];
 }
