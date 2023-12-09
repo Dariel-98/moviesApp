@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Result } from '../interfaces/movie.interface';
+import { MovieID } from '../interfaces/byID.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -17,5 +18,10 @@ export class MovieService {
   findTitle(term: string): Observable<Result> {
     const url = `${this.apiUrl}/?apikey=${environment.apiKey}&s=${term}`;
     return this.http.get<Result>(url);
+  }
+
+  findId(term: string): Observable<MovieID> {
+    const url = `${this.apiUrl}/?apikey=${environment.apiKey}&i=${term}`;
+    return this.http.get<MovieID>(url);
   }
 }
