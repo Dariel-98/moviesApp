@@ -1,22 +1,24 @@
 <div class="row">
-  <div class="col-3 mt-4">
+  <div class="col col-sm-4 mt-4">
     <img src="{{ movie.Poster }}" alt="" style="width: 100%" />
   </div>
   <div *ngIf="!isEmpty" class="col-3 mt-4">
     <h5>
-      Titulo: <span class="fw-normal">{{ movie.Title }}</span>
+      Titulo: <span class="fst-italic fw-normal">{{ movie.Title }}</span>
     </h5>
     <br />
     <h5>
-      Year: <span class="fw-normal">{{ movie.Year }}</span>
+      Year: <span class="fst-italicfw-normal">{{ movie.Year }}</span>
     </h5>
     <br />
     <h5>
-      Type: <span class="fw-normal">{{ movie.Type | titlecase }}</span>
+      Type:
+      <span class="fst-italic fw-normal">{{ movie.Type | titlecase }}</span>
     </h5>
     <br />
     <h5>
-      Genre: <span class="fw-normal">{{ movie.Genre | titlecase }}</span>
+      Genre:
+      <span class="fst-italic fw-normal">{{ movie.Genre | titlecase }}</span>
     </h5>
     <br />
   </div>
