@@ -34,4 +34,8 @@ export class PerIdComponent {
       }
     });
   }
+  // Method to retrieve message error
+  suggestions(term: string) {
+    this.isError = false;
+  }
 }

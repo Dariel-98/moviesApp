@@ -30,4 +30,8 @@ export class PerTitleComponent {
       }
     });
   }
+  // Method to retrieve message error
+  suggestions(term: string) {
+    this.isError = false;
+  }
 }

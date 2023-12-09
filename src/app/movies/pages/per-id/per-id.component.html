@@ -2,7 +2,10 @@
   <div class="d-flex align-items-center justify-content-between">
     <h4>Per ID</h4>
     <!-- Search input -->
-    <app-input (onSearch)="search($event)"></app-input>
+    <app-input
+      (onSearch)="search($event)"
+      (onDebounce)="suggestions($event)"
+    ></app-input>
   </div>
   <hr />
 
