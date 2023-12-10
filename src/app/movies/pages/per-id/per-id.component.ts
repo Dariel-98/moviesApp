@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { MovieID } from '../../interfaces/byID.interface';
 import { MovieService } from '../../services/movie.service';
@@ -8,7 +8,7 @@ import { MovieService } from '../../services/movie.service';
   templateUrl: './per-id.component.html',
   styles: [],
 })
-export class PerIdComponent {
+export class PerIdComponent implements OnInit {
   // Declaring variables
   term: string = '';
   isError: boolean = false;
@@ -17,6 +17,9 @@ export class PerIdComponent {
 
   constructor(private movieService: MovieService) {}
 
+  ngOnInit(): void {
+    this.search('tt1285016');
+  }
   // Method to search movies by ID
   search(term: string) {
     this.term = term;

@@ -20,8 +20,6 @@ export class InputComponent implements OnInit {
   debouncer: Subject<string> = new Subject();
 
   ngOnInit() {
-    this.search('lord');
-
     this.debouncer.pipe(debounceTime(300)).subscribe((value) => {
       this.onDebounce.emit(value);
     });

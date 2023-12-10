@@ -51,7 +51,7 @@
         </ul>
       </div>
       <!-- Pagination -->
-      <div class="btn-group me-2" role="group" aria-label="Basic example">
+      <div class="btn-group me-2" role="group">
         <button
           type="button"
           class="btn btn-outline-secondary btn-sm"
@@ -87,5 +87,9 @@
   <!-- Movie Cards -->
   <div *ngIf="!isError">
     <app-cards [movies]="movies"></app-cards>
+  </div>
+
+  <div *ngIf="!isError" class="text-end">
+    <pre>*Found {{ totalResults }} results for this search.</pre>
   </div>
 </div>

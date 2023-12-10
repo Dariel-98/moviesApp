@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Search } from '../../interfaces/movie.interface';
 
@@ -7,7 +7,7 @@ import { Search } from '../../interfaces/movie.interface';
   templateUrl: './per-title.component.html',
   styles: [],
 })
-export class PerTitleComponent {
+export class PerTitleComponent implements OnInit {
   // Declaring variables
   term: string = '';
   isError: boolean = false;
@@ -15,9 +15,25 @@ export class PerTitleComponent {
   pageNumber: number = 1; // Page number (from 1 to 100)
   totalResults: number = 0; // Results per search
   type: string = ''; // Type of search
+  randomSearch: string[] = [
+    'lord',
+    'shrek',
+    'red',
+    'barbie',
+    'fire',
+    'wind',
+    'shark',
+    'water',
+    'kill',
+    'dragon',
+  ]; // Random elements to search when starting page
+  randomIndex: number = Math.floor(Math.random() * this.randomSearch.length);
 
   constructor(private movieService: MovieService) {}
 
+  ngOnInit(): void {
+    this.search(this.randomSearch[this.randomIndex]);
+  }
   // Method to search movies by title
   search(term: string) {
     this.term = term;
