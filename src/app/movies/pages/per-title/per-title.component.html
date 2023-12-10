@@ -5,6 +5,51 @@
     </div>
 
     <div class="d-flex align-items-center">
+      <!-- Dropdown Type Menu -->
+      <div class="dropstart me-2">
+        <button
+          class="btn btn-outline-secondary btn-sm dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Type
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <button
+              class="btn btn-secondary dropdown-item"
+              (click)="perType('movie')"
+            >
+              Movie
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn-secondary dropdown-item"
+              (click)="perType('series')"
+            >
+              Series
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn-secondary dropdown-item"
+              (click)="perType('episode')"
+            >
+              Episode
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn btn-secondary dropdown-item"
+              (click)="perType('game')"
+            >
+              Game
+            </button>
+          </li>
+        </ul>
+      </div>
       <!-- Pagination -->
       <div class="btn-group me-2" role="group" aria-label="Basic example">
         <button
@@ -34,7 +79,7 @@
 
   <!-- Error Message -->
   <div *ngIf="isError" class="alert alert-danger w-50">
-    Nothing found with the title: "{{ term }}".
+    No {{ type }} found with the title: "{{ term }}".
   </div>
 
   <!-- Movie Cards -->

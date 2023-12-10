@@ -10,7 +10,7 @@ import { MovieID } from '../interfaces/byID.interface';
 })
 export class MovieService {
   // Declaring variables
-  private apiUrl: string = 'http://www.omdbapi.com';
+  private apiUrl: string = 'https://www.omdbapi.com';
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +18,7 @@ export class MovieService {
   findTitle(
     term: string,
     pageNumber?: number,
-    type?: string
+    type: string = ''
   ): Observable<Result> {
     const url = `${this.apiUrl}/?apikey=${environment.apiKey}&s=${term}&page=${pageNumber}&type=${type}`;
     return this.http.get<Result>(url);

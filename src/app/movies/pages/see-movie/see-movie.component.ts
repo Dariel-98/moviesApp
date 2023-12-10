@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../../services/movie.service';
-import { MovieID } from '../../interfaces/byID.interface';
+
 import { ActivatedRoute } from '@angular/router';
+import { MovieID } from '../../interfaces/byID.interface';
+import { MovieService } from '../../services/movie.service';
+
 import { switchMap, tap } from 'rxjs';
 
 @Component({

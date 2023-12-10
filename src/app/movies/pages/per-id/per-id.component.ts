@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input } from '@angular/core';
-import { MovieService } from '../../services/movie.service';
+import { Component } from '@angular/core';
+
 import { MovieID } from '../../interfaces/byID.interface';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-per-id',

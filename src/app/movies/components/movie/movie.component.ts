@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { MovieID } from '../../interfaces/byID.interface';
 
 @Component({

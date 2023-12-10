@@ -12,7 +12,7 @@
         <p class="text-muted">{{ movie.Year }}</p>
         <p class="card-text">{{ movie.Type | titlecase }}</p>
         <p class="card-text">
-          <small class="text-body-secondary">{{ movie.imdbID }}</small>
+          <small class="text-body-secondary">ID: {{ movie.imdbID }}</small>
         </p>
       </div>
       <a [routerLink]="['/id', movie.imdbID]" class="btn btn-secondary"
