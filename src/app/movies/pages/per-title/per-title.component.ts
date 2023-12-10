@@ -27,13 +27,9 @@ export class PerTitleComponent {
       .findTitle(this.term, this.pageNumber, this.type)
       .subscribe((resp) => {
         if (resp.Response === 'True') {
-          console.log(resp);
-
           this.movies = resp.Search;
           this.totalResults = Number(resp.totalResults);
         } else {
-          console.log(resp);
-
           this.isError = true;
         }
       });

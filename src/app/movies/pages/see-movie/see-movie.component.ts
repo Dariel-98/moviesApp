@@ -21,10 +21,7 @@ export class SeeMovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params
-      .pipe(
-        switchMap(({ ID }) => this.movieService.findId(ID)),
-        tap(console.log)
-      )
+      .pipe(switchMap(({ ID }) => this.movieService.findId(ID)))
       .subscribe((movie) => (this.movie = movie));
   }
 }

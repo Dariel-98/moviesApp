@@ -1,18 +1,21 @@
-<div class="row">
-  <div class="col col-sm-4 mt-4">
+<div class="row d-flex aling-items-center">
+  <!-- Poster Column -->
+  <div class="col-sm-6 col-md-3 mt-4 text-center">
     <img
-      class="rounded shadow"
+      class="rounded shadow img-fluid"
       src="{{ movie.Poster }}"
       alt="Poster of the movie"
       loading="lazy"
       [ngStyle]="{
-        'min-height': '100px',
+        'min-height': '100%',
         visibility: imageLoaded ? 'visible' : 'hidden'
       }"
       (load)="onImageLoad()"
     />
   </div>
-  <div *ngIf="!isEmpty" class="col-3 mt-4">
+
+  <!-- Movie Details Column -->
+  <div *ngIf="!isEmpty" class="col-sm-6 mt-4">
     <h5>
       Title: <span class="fst-italic fw-normal">{{ movie.Title }}</span>
     </h5>
@@ -30,14 +33,14 @@
       Genre:
       <span class="fst-italic fw-normal">{{ movie.Genre | titlecase }}</span>
     </h5>
-    <br />
   </div>
 </div>
-<div *ngIf="!isEmpty" class="row mt-4">
-  <div class="col-10">
-    <h5>
-      Plot:
-      <span class="fw-normal lh-base fst-italic">{{ movie.Plot }}</span>
-    </h5>
-  </div>
+
+<br />
+<!-- Plot -->
+<div *ngIf="!isEmpty" class="mt-4">
+  <h5>
+    Plot:
+    <span class="fw-normal lh-base fst-italic">{{ movie.Plot }}</span>
+  </h5>
 </div>
